@@ -1,0 +1,40 @@
+provider_config:
+  bms:
+   ssh_pwd: c0ntrail123
+   ssh_user: root
+instances:
+     10.84.18.11:
+        provider: bms
+        ip: 10.84.18.11
+        roles:
+          analytics: {}
+          analytics_database: {}
+          config: {}
+          config_database: {}
+          control: {}
+          webui: {}
+          k8s_master: {}
+          kubemanager: {}
+          openstack: {}
+     10.84.18.12:
+        provider: bms
+        ip: 10.84.18.12
+        roles:
+          k8s_node: {}
+          openstack_compute: {}
+          vrouter: {}
+global_configuration:
+  CONTAINER_REGISTRY: opencontrailnightly
+contrail_configuration:
+  CONTRAIL_VERSION: latest
+  CONTROLLER_NODES: 10.84.18.11
+  CLOUD_ORCHESTRATOR: openstack
+  UPGRADE_KERNEL: true
+  RABBITMQ_NODE_PORT: 5673
+  AUTH_MODE: keystone
+  KEYSTONE_AUTH_URL_VERSION: /v3
+kolla_config:
+  kolla_globals:
+    enable_haproxy: no
+  kolla_passwords:
+    keystone_admin_password: password
