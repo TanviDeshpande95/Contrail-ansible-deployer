@@ -1,0 +1,30 @@
+provider_config:
+  bms:
+   ssh_pwd: c0ntrail123
+   ssh_user: root
+instances:
+     10.84.18.11:
+        provider: bms
+        ip: 10.84.18.11
+        roles:
+          analytics: {}
+          analytics_database: {}
+          config: {}
+          config_database: {}
+          control: {}
+          k8s_master: {}
+          kubemanager: {}
+          webui: {}
+     10.84.18.12:
+        provider: bms
+        ip: 10.84.18.12
+        roles:
+          k8s_node: {}
+          vrouter: {}
+global_configuration:
+  CONTAINER_REGISTRY: opencontrailnightly
+contrail_configuration:
+  CONTRAIL_VERSION: latest
+  CONTROLLER_NODES: 10.84.18.11
+  CLOUD_ORCHESTRATOR: kubernetes
+  KUBERNETES_CLUSTER_PROJECT: {}
