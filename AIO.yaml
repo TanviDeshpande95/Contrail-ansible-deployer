@@ -1,0 +1,34 @@
+provider_config:
+  bms:
+    ssh_pwd: 0p3n-c0ntrail123!
+    ssh_user: root
+    ntpserver: 10.84.5.100
+instances:
+  bms1:
+    provider: bms
+    ip: 10.10.16.104
+    roles:
+      config_database:
+      config:
+      control:
+      analytics_database:
+      analytics:
+      webui:
+      vrouter:
+      openstack:
+      openstack_compute:
+contrail_configuration:
+  UPGRADE_KERNEL: true
+  RABBITMQ_NODE_PORT: 5673
+  AUTH_MODE: keystone
+  KEYSTONE_AUTH_URL_VERSION: /v3
+  AAA_MODE: cloud-admin
+  CONTRAIL_VERSION: latest
+kolla_config:
+  kolla_globals:
+    enable_haproxy: no
+  kolla_passwords:
+    keystone_admin_password: c0ntrail123
+global_configuration:
+ CONTAINER_REGISTRY: opencontrailnightly
+ REGISTRY_PRIVATE_INSECURE: TRUE
