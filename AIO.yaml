@@ -23,12 +23,14 @@ contrail_configuration:
   AUTH_MODE: keystone
   KEYSTONE_AUTH_URL_VERSION: /v3
   AAA_MODE: cloud-admin
-  CONTRAIL_VERSION: latest
+  CONTRAIL_VERSION: ocata-5.0-161
 kolla_config:
   kolla_globals:
     enable_haproxy: no
   kolla_passwords:
     keystone_admin_password: c0ntrail123
 global_configuration:
- CONTAINER_REGISTRY: opencontrailnightly
+ CONTAINER_REGISTRY: hub.juniper.net/contrail-nightly
  REGISTRY_PRIVATE_INSECURE: TRUE
+ CONTAINER_REGISTRY_USERNAME: JNPR-FieldUser50
+ CONTAINER_REGISTRY_PASSWORD: fHzTJy9vjdgX5a6shKr7
