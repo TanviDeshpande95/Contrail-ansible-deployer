@@ -1,4 +1,6 @@
-echo nameserver 8.8.8.8 > /etc/resolv.conf
+yum install -y net-tools
+yum install -y vim
+yum install -y nano
 yum -y install git ansible-2.4.2.0
 ansible-playbook playbook.yaml
 service docker start
@@ -35,3 +37,7 @@ docker pull 10.10.10.209:8787/contrail-vrouter-kernel-init:ocata-5.0-166
 docker pull 10.10.10.209:8787/contrail-controller-webui-job:ocata-5.0-166
 docker pull 10.10.10.209:8787/contrail-controller-webui-web:ocata-5.0-166
 docker pull 10.10.10.209:8787/contrail-external-zookeeper:ocata-5.0-166
+yum install -y gcc python-devel
+pip install python-openstackclient
+pip install python-ironicclient
+git clone https://github.com/arohigupta/playbook_security.git
