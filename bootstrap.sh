@@ -1,4 +1,5 @@
 yum install -y epel-release
+yum install -y python-pip
 yum install -y net-tools
 yum install -y vim
 yum install -y nano
