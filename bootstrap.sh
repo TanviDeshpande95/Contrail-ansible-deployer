@@ -40,4 +40,4 @@ docker pull 10.10.10.209:8787/contrail-external-zookeeper:ocata-5.0-166
 yum install -y gcc python-devel
 pip install python-openstackclient
 pip install python-ironicclient
-git clone https://github.com/arohigupta/playbook_security.git
+
