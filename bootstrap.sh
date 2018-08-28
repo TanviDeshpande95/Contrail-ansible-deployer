@@ -1,3 +1,5 @@
+###This file installs basic packages on a VM/BMS, installs particular version of ansible and pulls all contrail images locally. Change repo information as required.
+
 yum install -y epel-release
 yum install -y python-pip
 yum install -y net-tools
